@@ -15,12 +15,12 @@ const AboutUs = () => {
                 <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start">
                     <div className="relative bg-[#2B3CAB] w-full lg:w-[552px] lg:h-[380px] h-[270px] rounded-lg mb-6 lg:mb-0">
                         <div className="">
-                            <div className="absolute hover:bottom-4 lg:hover:right-[-16px] ease-in-out duration-500">
+                            <div className="absolute lg:hover:bottom-4 lg:hover:right-[-16px] ease-in-out duration-500">
                                 <img src={about} alt="" className="w-full" />
                             </div>
                         </div>
                     </div>
-                    <div className="w-full lg:w-[550px] px-4 lg:px-0">
+                    <div className="w-full lg:w-[550px] px-4 lg:px-0 mt-5 lg:mt-0">
                         <h4 className="font-jose font-bold text-[24px] sm:text-[30px] lg:text-[36px] text-[#151875]">Know About Our Ecommerce Business, History</h4>
                         <p className="font-lato font-semibold text-[14px] sm:text-[16px] text-[#8A8FB9] pt-4 pb-10 lg:pb-20">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis neque ultrices mattis aliquam, malesuada diam est. Malesuada sem tristique amet erat vitae eget dolor lobortis. Accumsan faucibus vitae lobortis quis bibendum quam.

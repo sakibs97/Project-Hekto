@@ -31,17 +31,17 @@ const Navbar = () => {
                         <Link to="/"><img src={Hekto} alt="Hekto" /></Link>
                     </div>
                     <div className="flex justify-between items-center lg:w-[80%]" >
-                        <ul className={`lg:flex justify-between w-[50%] text-center lg:static z-50 lg:bg-none absolute ${show == true ? 'bg-[rgb(22,22,22,10%)] top-[140px]  w-full left-0 ease-in-out duration-700' : 'left-[-400px] top-[140px] ease-in-out duration-700'}`}>
+                        <ul className={`lg:flex justify-between lg:w-[50%] text-center lg:static z-50 lg:bg-none absolute ${show == true ? 'bg-[rgb(22,22,22,10%)] w-full top-[140px]  left-0 ease-in-out duration-700' : 'left-[-400px] top-[140px] ease-in-out duration-700'}`}>
                             <li className={`font-lato font-normal text-[16px] hover:text-[#FB2E86] ${activeTab === 'Home' ? 'text-[#FB2E86]' : 'text-[#0D0E43]'}`} id="Home-tab" onClick={() => setActiveTab('Home')}><Link to="/">Home</Link></li>
                             <li className={`font-lato font-normal text-[16px] hover:text-[#FB2E86] ${activeTab === 'shop' ? 'text-[#FB2E86]' : 'text-[#0D0E43]'}`} onClick={() => setActiveTab('shop')}><Link to="/shop">Shop</Link></li>
                             <li className={`font-lato font-normal text-[16px] hover:text-[#FB2E86] ${activeTab === 'blog' ? 'text-[#FB2E86]' : 'text-[#0D0E43]'}`} onClick={() => setActiveTab('blog')}><Link to="/blog">Blog</Link></li>
                             <li className="font-lato font-normal text-[#0D0E43] text-[16px] hover:text-[#FB2E86]">Products</li>
                             <div className="relative group">
-                                <li className="font-lato font-normal text-[16px] text-[#0D0E43] hover:text-[#FB2E86] after:hover:text-[#FB2E86]" >
-                                    <Link>Page</Link>
+                                <li className="font-lato font-normal text-[16px] text-[#0D0E43] hover:text-[#FB2E86] after:active:text-[#FB2E86] cursor-pointer" >
+                                    Page
                                 </li>
 
-                                <ul className="absolute top-4 left-0 z-50 lg:left-[-10px] opacity-0 hover:opacity-100 lg:group-hover:left-[50%] lg:translate-x-[-50%] group-hover:top-7 ease-in-out duration-500 w-[200%] bg-[rgb(22,22,22,10%)] pb-1 px-1 overflow-hidden">
+                                <ul className="absolute top-0 right-0 -z-0 lg:left-[-10px] opacity-0 group-hover:opacity-100 lg:group-hover:left-[50%] lg:translate-x-[-50%]  group-hover:right-8 ease-in-out duration-500 lg:w-[200%] bg-[rgb(22,22,22,10%)] pb-1 px-5 rounded-b-xl">
                                     <Link to='/About-Us'><li className="font-lato font-normal text-[#0D0E43] py-2 text-[14px] hover:text-[#FB2E86]">About US</li></Link>
                                     <Link to='/faq'><li className="font-lato font-normal text-[#0D0E43] text-[14px] hover:text-[#FB2E86]">FAQ</li></Link>
                                     <Link to='/*'><li className="font-lato font-normal text-[#0D0E43] py-2 text-[14px] hover:text-[#FB2E86]">Category</li></Link>

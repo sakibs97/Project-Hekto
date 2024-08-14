@@ -7,7 +7,7 @@ const NotFound = ({ headline, pname, home, page }) => {
     return (
         <section>
             <Bannerreusable headline='404 Not Found' pname='404 Not Found' home='Home' page='Page' />
-            <Container className='text-center my-10'>
+            <Container className='text-center my-10 px-[10px] lg:px-0'>
                 <div className="relative">
                     <h3 className="font-jose font-bold lg:text-[530px] text-[200px] text-[#F6F8FF] leading-none">404</h3>
                     <div className="absolute top-[50%] left-[50%] translate-x-[-50%] w-[300px] lg:w-[650px] translate-y-[-50%]">
@@ -650,8 +650,8 @@ const NotFound = ({ headline, pname, home, page }) => {
                     </div>
                 </div>
                 <div className="">
-                    <h5 className="font-jose font-bold text-[24px] text-[#152970]">ooPs! The page you requested was not found!</h5>
-                    <Link to="/"><button className="font-jose font-normal text-[16px] text-[#fff] py-[9px] px-[30px] border bg-[#FB2E86] mt-10 rounded-md">Back To Home</button></Link>
+                    <h5 className="font-jose font-bold lg:text-[24px] text-[20px] text-[#152970]">ooPs! The page you requested was not found!</h5>
+                    <Link to="/"><button className="font-jose font-normal text-[14px] lg:text-[16px] text-[#fff] py-[9px] px-[30px] border bg-[#FB2E86] mt-10 rounded-md">Back To Home</button></Link>
                 </div>
             </Container>
             <Sponser />
