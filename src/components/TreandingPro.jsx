@@ -97,7 +97,6 @@ const TreandingPro = ({ name, price, pricex }) => {
                             </div>
                         </div>
                     </div>
-
                     <div className="w-[49%] my-2 lg:my-0 lg:w-[19%] sm:w-[32%] md:w-[32%]">
                         <div className="group px-[10px] pt-[10px] pb-[20px] border-[1px]">
                             <div className="relative p-[30px] bg-[#F5F6F8] ease-in-out duration-500">

@@ -1,4 +1,3 @@
-
 import { IoCartOutline } from "react-icons/io5";
 import { FaSearchPlus } from "react-icons/fa";
 import { IoMdHeartEmpty } from "react-icons/io";
