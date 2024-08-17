@@ -24,9 +24,18 @@ const ShopGridDefault = () => {
     }
     let paginate = (pageNumber) => {
         setPageStart(pageNumber + 1)
-
+    }
+    let next = () => {
+        if (pageStart < pageNumber.length) {
+            setPageStart((state) => state + 1)
+        }
     }
 
+    let prev = () => {
+        if (pageStart > 1) {
+            setPageStart((state) => state - 1)
+        }
+    }
 
 
 
@@ -41,7 +50,7 @@ const ShopGridDefault = () => {
                     <PageCategorie />
                     <Post allpage={allpage} />
                 </div >
-                <PaginationArea pageNumber={pageNumber} paginate={paginate} />
+                <PaginationArea pageNumber={pageNumber} paginate={paginate} next={next} prev={prev} />
 
             </Container>
         </section>
