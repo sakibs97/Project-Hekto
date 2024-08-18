@@ -26,7 +26,7 @@ const ProductDetails = () => {
     }, [])
 
     let handelAddtoCart = (item) => {
-        dispatch(addToCart(item))
+        dispatch(addToCart({ ...item, qun: 1 }))
 
     }
 

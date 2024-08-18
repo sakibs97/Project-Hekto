@@ -1,15 +1,28 @@
 import Container from "../components/Container"
 import Bannerreusable from "../components/reusable/Bannerreusable"
-import cart from "../assets/cart.png"
 import { TableBody, TableCell, TableHead, TableRow } from "@mui/material"
 import { Link } from "react-router-dom";
+import { GoXCircleFill } from "react-icons/go";
+import { useDispatch, useSelector } from "react-redux";
+import { productIncrement, productDecrement, removeProduct } from "../components/slice/productSlice";
 
 
-const Cart = ({ headline, pname, home, page }) => {
+const Cart = () => {
+    let dispatch = useDispatch()
+    let data = useSelector((state) => state.product.cartItem)
+
+
+    const { totalPrice, totalQuantity } = data.reduce((acc, item) => {
+        acc.totalPrice += item.price * item.qun
+        acc.totalQuantity += item.qun
+        return acc
+    }, { totalPrice: 0, totalQuantity: 0 })
+
+
     return (
         <section>
             <Bannerreusable headline='Shopping Cart' pname='Shopping Cart' home='Home' page='Page' />
-            <Container className='my-10 flex flex-col lg:flex-row justify-between '>
+            <Container className='my-10 flex flex-col lg:flex-row justify-between'>
                 <div className="lg:w-[70%] w-full overflow-x-auto px-[10px] lg:px-0">
                     <table className="w-full">
                         <TableHead>
@@ -18,32 +31,42 @@ const Cart = ({ headline, pname, home, page }) => {
                             <TableCell><h6 className="font-jose font-bold text-[16px] md:text-[20px] text-[#1D3178]">Quantity</h6></TableCell>
                             <TableCell><h6 className="font-jose font-bold text-[16px] md:text-[20px] text-[#1D3178]">Total</h6></TableCell>
                         </TableHead>
-                        <TableBody>
-                            <TableRow>
-                                <TableCell>
-                                    <div className="flex items-center">
-                                        <img src={cart} alt="" className="w-12 h-12 md:w-16 md:h-16" />
-                                        <div className="pl-[10px] md:pl-[20px]">
-                                            <h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#000000]">Ut diam consequat</h6>
+                        {data.map((item, index) => (
+                            <>
+                                <TableBody>
+                                    <TableRow>
+                                        <TableCell>
                                             <div className="flex items-center">
-                                                <p className="font-jose font-normal text-[10px] md:text-[12px] text-[#A1A8C1]">Color:</p>
-                                                <p className="font-jose font-normal text-[12px] md:text-[14px] text-[#A1A8C1]">Brown</p>
+                                                <div className="relative">
+                                                    <img src={item.images} alt="" className="w-12 h-12 md:w-16 md:h-16 lg:w-[100px] lg:h-[100px]" />
+                                                    <div className="absolute -top-[8px] -right-[6px]" onClick={() => dispatch(removeProduct(index))}>
+                                                        <GoXCircleFill className="hover:text-[#FB2E86]" />
+                                                    </div>
+                                                </div>
+                                                <div className="pl-[10px] md:pl-[20px]">
+                                                    <h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#000000] w-[200px]">{item.title}</h6>
+                                                    <div className="flex items-center">
+                                                        <p className="font-jose font-normal text-[10px] md:text-[12px] text-[#A1A8C1]">Color:</p>
+                                                        <p className="font-jose font-normal text-[12px] md:text-[14px] text-[#A1A8C1]">Brown</p>
+                                                    </div>
+                                                    <div className="flex items-center">
+                                                        <p className="font-jose font-normal text-[10px] md:text-[12px] text-[#A1A8C1]">Size:</p>
+                                                        <p className="font-jose font-normal text-[12px] md:text-[14px] text-[#A1A8C1]">XL</p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="flex items-center">
-                                                <p className="font-jose font-normal text-[10px] md:text-[12px] text-[#A1A8C1]">Size:</p>
-                                                <p className="font-jose font-normal text-[12px] md:text-[14px] text-[#A1A8C1]">XL</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </TableCell>
-                                <TableCell><h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#15245E]">$32.00</h6></TableCell>
-                                <TableCell><p className="border bg-[#F0EFF2] font-jose font-normal text-[10px] md:text-[12px] text-[#BEBFC2] w-[45px] md:w-[55px] flex justify-between items-center"><span className=" py-[4px] px-[6px] bg-[#E7E7EF]">-</span> 1 <span className=" py-[4px] px-[6px] bg-[#E7E7EF]">+</span></p></TableCell>
-                                <TableCell><h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#15245E]">£219.00</h6></TableCell>
-                            </TableRow>
-                        </TableBody>
+
+                                        </TableCell>
+                                        <TableCell><h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#15245E]">${item.price}</h6></TableCell>
+                                        <TableCell><p className="border bg-[#F0EFF2] font-jose font-normal text-[10px] md:text-[12px] lg:text-[12px] text-[#FB2E86] w-[45px] md:w-[55px] lg:w-[70px] flex justify-between items-center"><span className="py-[4px] px-[6px] bg-[#E7E7EF] hover:text-[#FB2E86] text-[#BEBFC2] text-[20px] cursor-pointer" onClick={() => dispatch(productDecrement(index))}>-</span>{item.qun}<span className="py-[4px] px-[6px] bg-[#E7E7EF] text-[#BEBFC2] hover:text-[#FB2E86] text-[20px] cursor-pointer" onClick={() => dispatch(productIncrement(index))}>+</span></p></TableCell>
+                                        <TableCell className=" w-[150px]"><h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#15245E]">${item.price * item.qun}</h6></TableCell>
+                                    </TableRow>
+                                </TableBody>
+                            </>
+                        ))}
                     </table>
                     <div className="w-full flex md:flex-row justify-between items-center mt-10">
-                        <button className="font-jose font-semibold text-[14px] md:text-[16px] text-[#fff] py-[10px] px-[20px] border border-[#FB2E86] bg-[#FB2E86] rounded-md mb-4 md:mb-0">Update Cart</button>
+                        <Link to='/shop' className="font-jose font-semibold text-[14px] md:text-[16px] text-[#fff] py-[10px] px-[20px] border border-[#FB2E86] bg-[#FB2E86] rounded-md mb-4 md:mb-0">Buy More</Link>
                         <Link to='/g'><button className="font-jose font-semibold text-[14px] md:text-[16px] text-[#fff] py-[10px] px-[20px] border border-[#FB2E86] bg-[#FB2E86] rounded-md">Clear Cart</button></Link>
                     </div>
                 </div>
@@ -52,16 +75,17 @@ const Cart = ({ headline, pname, home, page }) => {
                     <div className="p-[20px] md:p-[30px] bg-[#F4F4FC] rounded-md drop-shadow-md mx-[10px] lg:mx-0">
                         <div className="border-b-[3px] border-[#E8E6F1] flex justify-between items-center my-7">
                             <h6 className="font-lato font-semibold text-[16px] md:text-[18px] text-[#1D3178]">Subtotals:</h6>
-                            <p className="font-lato font-normal text-[14px] md:text-[16px] text-[#15245E]">£219.00</p>
+                            <p className="font-lato font-normal text-[14px] md:text-[16px] text-[#15245E]">${totalPrice}</p>
+                        </div>
+                        <div className="border-b-[3px] border-[#E8E6F1] flex justify-between items-center my-7">
+                            <h6 className="font-lato font-semibold text-[16px] md:text-[18px] text-[#1D3178]">Total Quntity:</h6>
+                            <p className="font-lato font-normal text-[14px] md:text-[16px] text-[#15245E]">{totalQuantity}</p>
                         </div>
                         <div className="border-b-[3px] border-[#E8E6F1] flex justify-between items-center my-7">
                             <h6 className="font-lato font-semibold text-[16px] md:text-[18px] text-[#1D3178]">Totals:</h6>
-                            <p className="font-lato font-normal text-[14px] md:text-[16px] text-[#15245E]">£325.00</p>
+                            <p className="font-lato font-normal text-[14px] md:text-[16px] text-[#15245E]">${totalPrice}</p>
                         </div>
-                        <div className="flex items-center">
-                            <input type="checkbox" name="" id="" className="checked:bg-[#19D16F] checked:border-[#19D16F] border-[#19D16F]" />
-                            <p className="font-lato font-normal text-[10px] md:text-[12px] text-[#8A91AB] pl-[10px]">Shipping & taxes calculated at checkout</p>
-                        </div>
+
                     </div>
                     <h4 className="font-jose font-bold text-[18px] md:text-[20px] text-[#1D3178] mt-[16px] py-7 text-center">Calculate Shipping</h4>
                     <div className="p-[20px] md:p-[30px] bg-[#F4F4FC] rounded-md drop-shadow-md mx-[10px] lg:mx-0">
