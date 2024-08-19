@@ -48,7 +48,7 @@ const Post = ({ allpage, categoryFilter }) => {
                             </>
                         ))}
                     </div>
-                    <h6 onClick={handelShow}>Hello</h6>
+                    <h6 onClick={handelShow} className="font-jose font-normal underline text-[14px] text-[#151875] cursor-pointer">Show All</h6>
                 </div>
                 :
                 <div className="flex flex-wrap lg:gap-x-16 items-center">

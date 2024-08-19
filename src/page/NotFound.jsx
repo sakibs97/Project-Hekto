@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom"
 import Container from "../components/Container"
-import Bannerreusable from "../components/reusable/Bannerreusable"
 import Sponser from "../components/Sponser"
 
-const NotFound = ({ headline, pname, home, page }) => {
+const NotFound = () => {
     return (
         <section>
-            <Bannerreusable headline='404 Not Found' pname='404 Not Found' home='Home' page='Page' />
+
             <Container className='text-center my-10 px-[10px] lg:px-0'>
                 <div className="relative">
                     <h3 className="font-jose font-bold lg:text-[530px] text-[200px] text-[#F6F8FF] leading-none">404</h3>
