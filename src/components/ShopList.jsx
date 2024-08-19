@@ -3,7 +3,7 @@ import PageSortBy from "./PageSortBy"
 import Bannerreusable from "./reusable/Bannerreusable"
 import { GoDotFill } from "react-icons/go";
 import { FaStar } from "react-icons/fa";
-import PageCategorie from "./PageCategorie";
+
 import ListIconreusable from "./reusable/ListIconreusable"
 import { Link } from "react-router-dom"
 import { useContext } from "react";
@@ -18,7 +18,7 @@ const ShopList = () => {
             <Container>
                 <PageSortBy />
                 <div className="my-7 flex justify-between">
-                    <PageCategorie />
+
                     <div className="w-[75%]">
                         {data.map((item) => (
                             <>

@@ -2,9 +2,11 @@ import Container from "../components/Container"
 import Bannerreusable from "../components/reusable/Bannerreusable"
 import { TableBody, TableCell, TableHead, TableRow } from "@mui/material"
 import { Link } from "react-router-dom";
+import { FaPlus, FaMinus } from "react-icons/fa6";
 import { GoXCircleFill } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { productIncrement, productDecrement, removeProduct } from "../components/slice/productSlice";
+
 
 
 const Cart = () => {
@@ -39,7 +41,7 @@ const Cart = () => {
                                             <div className="flex items-center">
                                                 <div className="relative">
                                                     <img src={item.images} alt="" className="w-12 h-12 md:w-16 md:h-16 lg:w-[100px] lg:h-[100px]" />
-                                                    <div className="absolute -top-[8px] -right-[6px]" onClick={() => dispatch(removeProduct(index))}>
+                                                    <div className="absolute top-[-6px] right-[-7px]" onClick={() => dispatch(removeProduct(index))}>
                                                         <GoXCircleFill className="hover:text-[#FB2E86]" />
                                                     </div>
                                                 </div>
@@ -58,8 +60,8 @@ const Cart = () => {
 
                                         </TableCell>
                                         <TableCell><h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#15245E]">${item.price}</h6></TableCell>
-                                        <TableCell><p className="border bg-[#F0EFF2] font-jose font-normal text-[10px] md:text-[12px] lg:text-[12px] text-[#FB2E86] w-[45px] md:w-[55px] lg:w-[70px] flex justify-between items-center"><span className="py-[4px] px-[6px] bg-[#E7E7EF] hover:text-[#FB2E86] text-[#BEBFC2] text-[20px] cursor-pointer" onClick={() => dispatch(productDecrement(index))}>-</span>{item.qun}<span className="py-[4px] px-[6px] bg-[#E7E7EF] text-[#BEBFC2] hover:text-[#FB2E86] text-[20px] cursor-pointer" onClick={() => dispatch(productIncrement(index))}>+</span></p></TableCell>
-                                        <TableCell className=" w-[150px]"><h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#15245E]">${item.price * item.qun}</h6></TableCell>
+                                        <TableCell><p className="border bg-[#F0EFF2] font-jose font-bold text-[10px] md:text-[12px] lg:text-[14px] text-[#FB2E86] w-[45px] md:w-[55px] lg:w-[70px] flex justify-between items-center"><span className="py-[5px] px-[4px] bg-[#df6198] text-[#fff] cursor-pointer" onClick={() => dispatch(productDecrement(index))}><FaMinus /></span>{item.qun}<span className="py-[5px] px-[4px] bg-[#df6198] text-[#fff] cursor-pointer" onClick={() => dispatch(productIncrement(index))}><FaPlus /></span></p></TableCell>
+                                        <TableCell className="w-[150px]"><h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#15245E]">${item.price * item.qun}</h6></TableCell>
                                     </TableRow>
                                 </TableBody>
                             </>

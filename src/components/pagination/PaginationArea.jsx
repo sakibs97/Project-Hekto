@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 
 
@@ -7,9 +8,11 @@ const PaginationArea = ({ pageNumber, paginate, pageStart }) => {
     return (
         <nav aria-label="Page navigation" className='text-end'>
             <ul className="inline-flex space-x-[5px] h-10">
-                <li>
-                    <a className="flex items-center justify-center leading-tight px-[10px] pt-[4px] pb-[5px] border-[2px] border-[#E0D3F5] rounded-lg font-lato font-semibold text-[16px] text-[#E0D3F5] cursor-pointer">Previous</a>
-                </li>
+                {pageNumber.length > 0 &&
+                    <li>
+                        <a className="flex items-center justify-center leading-tight px-[10px] pt-[4px] pb-[5px] border-[2px] border-[#E0D3F5] rounded-lg font-lato font-semibold text-[16px] text-[#E0D3F5] cursor-pointer">Previous</a>
+                    </li>
+                }
 
                 {pageNumber.map((item, i) => (
                     <li key={i} onClick={() => paginate(item)}>
@@ -18,10 +21,11 @@ const PaginationArea = ({ pageNumber, paginate, pageStart }) => {
                         </a>
                     </li>
                 ))}
-
-                <li>
-                    <a className="flex items-center justify-center leading-tight px-[10px] pt-[4px] pb-[5px] border-[2px] border-[#E0D3F5] rounded-lg font-lato font-semibold text-[16px] text-[#E0D3F5] cursor-pointer">Next</a>
-                </li>
+                {pageNumber.length > 0 &&
+                    <li>
+                        <a className="flex items-center justify-center leading-tight px-[10px] pt-[4px] pb-[5px] border-[2px] border-[#E0D3F5] rounded-lg font-lato font-semibold text-[16px] text-[#E0D3F5] cursor-pointer">Next</a>
+                    </li>
+                }
             </ul>
         </nav>
     )

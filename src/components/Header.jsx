@@ -4,9 +4,15 @@ import { IoCall } from "react-icons/io5";
 import { RiArrowDropDownLine, RiShoppingCartFill } from "react-icons/ri";
 import { FaHeart, FaRegUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const Header = () => {
+    let data = useSelector((state) => state.product.cartItem)
+
+
+
+
     return (
         <section className="bg-[#7E33E0] py-[14px] px-[10px] lg:px-0">
             <Container>
@@ -38,7 +44,10 @@ const Header = () => {
                             <h6 className="font-jose font-semibold text-[#F1F1F1] text-[14px] lg:text-[16px]">Wishlist</h6>
                             <FaHeart className="text-[#F1F1F1] ml-[5px]" />
                         </div>
-                        <Link to='/cart'><RiShoppingCartFill className="text-[#F1F1F1] h-[20px] w-[20px] hover:text-[#FB2E86]" /></Link>
+                        <div className="relative group">
+                            <Link to='/cart'><RiShoppingCartFill className="text-[#F1F1F1] h-[20px] w-[20px] group-hover:text-[#FB2E86]" /></Link>
+                            <div className="absolute top-[-8px] -right-[2px] text-[#FB2E86] group-hover:text-[#fff] font-jose text-[15px] font-bold">{data.length}</div>
+                        </div>
                     </div>
                 </div>
 
