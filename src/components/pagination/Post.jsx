@@ -2,12 +2,22 @@
 import { GoDotFill } from "react-icons/go";
 import { Link } from "react-router-dom";
 import LatestProreusable from ".././reusable/LatestProreusable"
-
+import { useEffect, useState } from "react";
 
 
 
 const Post = ({ allpage, categoryFilter }) => {
-    console.log(categoryFilter);
+
+    let [filter, setFilter] = useState([])
+
+    useEffect(() => {
+        let showFilter = categoryFilter.slice(0, 5)
+        setFilter(showFilter)
+    }, [categoryFilter])
+
+    let handelShow = () => {
+        setFilter(categoryFilter)
+    }
 
 
     return (
@@ -15,7 +25,7 @@ const Post = ({ allpage, categoryFilter }) => {
             {categoryFilter.length > 0 ?
                 <div className="">
                     <div className="flex flex-wrap lg:gap-x-16 items-center">
-                        {categoryFilter.map((item) => (
+                        {filter.map((item) => (
                             <>
                                 <div className="group my-[15px] w-[235px] ">
                                     <div className="relative p-[15px] bg-[#ccc9c9] group-hover:bg-[#EBF4F3] ease-in-out duration-500 h-[235px] ">
@@ -30,15 +40,15 @@ const Post = ({ allpage, categoryFilter }) => {
                                             <GoDotFill className="text-[#8568FF]" />
                                         </div>
                                         <div className="flex items-center justify-center">
-                                            <p className="font-jose font-normal text-[14px] text-[#151875] pr-3">${item.price}.00</p>
-                                            <p className="font-jose font-normal text-[14px] text-[#FB2448] line-through">${item.price}.00</p>
+                                            <p className="font-jose font-normal text-[14px] text-[#151875] pr-3">${item.price}</p>
+                                            <p className="font-jose font-normal text-[14px] text-[#FB2448] line-through">${item.price}</p>
                                         </div>
                                     </div>
                                 </div>
                             </>
                         ))}
                     </div>
-                    <h6>Hello</h6>
+                    <h6 onClick={handelShow}>Hello</h6>
                 </div>
                 :
                 <div className="flex flex-wrap lg:gap-x-16 items-center">
