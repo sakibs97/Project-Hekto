@@ -5,9 +5,12 @@ import { useState } from "react"
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { getDatabase, ref, set } from "firebase/database";
+
 
 const ShippingAddy = ({ headline, pname, home, page }) => {
     const auth = getAuth();
+    const db = getDatabase();
     let [firstName, setFirstName] = useState("")
     let [email, setEmail] = useState("")
     let [password, setPassword] = useState("")
@@ -32,13 +35,16 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
 
                 updateProfile(auth.currentUser, {
                     displayName: firstName,
-                    photoURL: "https://example.com/jane-q-user/profile.jpg"
                 }).then(() => {
                     toast("Registration Successfully Done. Go to Login page")
                     setTimeout(() => {
                         navigate("/login")
                     }, 2000)
                 }).then(() => {
+                    set(ref(db, 'users/' + user.user.uid), {
+                        username: firstName,
+                        email: email,
+                    });
 
                 })
                     .catch((error) => {
@@ -102,9 +108,9 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
                             <div className="border-b-[2px] border-[#BFC6E0] w-full lg:w-[48%] mb-5 lg:mb-0">
                                 <input onChange={handelpassword} type="Password" placeholder="Enter your Password" className="w-full focus:ring-[#FB2E86] focus:border-[#FB2E86] border-none bg-[#F8F8FD] placeholder:font-lato placeholder:font-medium placeholder:text-[14px] pl-0 placeholder:text-[#C1C8E1] font-lato font-medium text-[15px] text-[#000]" />
                             </div>
-                            {/* <div className="border-b-[2px] border-[#BFC6E0] w-full lg:w-[48%]">
+                            <div className="border-b-[2px] border-[#BFC6E0] w-full lg:w-[48%]">
                                 <input type="Password" placeholder="Confirm Password" className="w-full focus:ring-[#FB2E86] focus:border-[#FB2E86] border-none bg-[#F8F8FD] placeholder:font-lato placeholder:font-medium placeholder:text-[14px] pl-0 placeholder:text-[#C1C8E1] font-lato font-medium text-[15px] text-[#000]" />
-                            </div> */}
+                            </div>
                         </div>
                         <div className="flex items-center">
                             <input type="checkbox" name="" id="" className="checked:bg-[#19D16F] focus:ring-[#19D16F] focus:border-[#19D16F] border-[#19D16F]" />

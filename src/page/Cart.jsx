@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { productIncrement, productDecrement, removeProduct } from "../components/slice/productSlice";
 
 
-
 const Cart = () => {
     let dispatch = useDispatch()
     let data = useSelector((state) => state.product.cartItem)
@@ -100,7 +99,7 @@ const Cart = () => {
                         <div className="border-b-[2px] border-[#C7CEE4]">
                             <input type="text" placeholder="Postal Code" className="font-jose font-semibold text-[14px] md:text-[15px] text-[#000] placeholder:font-jose placeholder:font-semibold placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-[#C5CBE3] border-none w-full bg-[#F4F4FC]" />
                         </div>
-                        <Link to="/Shipping-Details"><button className="font-jose font-semibold text-[14px] md:text-[16px] text-[#fff] py-[10px] md:py-[12px] px-[20px] md:px-[24px] border border-[#FB2E86] bg-[#FB2E86] rounded-md mt-10">Calculate Shipping</button></Link>
+                        <Link to="/shipping"><button className="font-jose font-semibold text-[14px] md:text-[16px] text-[#fff] py-[10px] md:py-[12px] px-[20px] md:px-[24px] border border-[#FB2E86] bg-[#FB2E86] rounded-md mt-10">Calculate Shipping</button></Link>
                     </div>
                 </div>
             </Container>
