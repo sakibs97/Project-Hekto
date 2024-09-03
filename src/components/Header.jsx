@@ -14,20 +14,20 @@ const Header = () => {
 
 
     return (
-        <section className="bg-[#7E33E0] py-[14px] px-[10px] lg:px-0">
+        <section className="bg-[#7E33E0] py-[14px] px-[10px]">
             <Container>
                 <div className="flex flex-wrap justify-between items-center">
-                    <div className="lg:w-[25%] w-[80%] flex items-center justify-between">
-                        <div className="flex items-center">
+                    <div className="lg:w-[25%] w-full lg:flex items-center justify-between">
+                        <div className="flex items-center justify-center">
                             <MdOutlineMail className="text-[#F1F1F1] text-[16px] lg:mr-[10px] mr-1" />
-                            <p className="font-jose font-semibold text-[#F1F1F1] text-[14px] lg:text-[16px]">mhhasanul@gmail.com</p>
+                            <p className="font-jose font-semibold text-[#F1F1F1] text-[14px] lg:text-[16px]">sakibs.ngn@gmail.com</p>
                         </div>
-                        <div className="flex items-center">
-                            <IoCall className="text-[#F1F1F1] text-[14px] lg:text-[16px] lg:mr-[10px] mr-1" />
-                            <p className="font-jose font-semibold text-[#F1F1F1] text-[14px] lg:text-[16px]">(12345)67890</p>
+                        <div className="flex items-center justify-center">
+                            <IoCall className="text-[#F1F1F1] text-[14px] lg:text-[16px] lg:mx-[10px] mx-1" />
+                            <p className="font-jose font-semibold text-[#F1F1F1] text-[14px] lg:text-[16px]">+8801751-051197</p>
                         </div>
                     </div>
-                    <div className="lg:w-[25%] w-full flex items-center justify-between">
+                    <div className="lg:w-[35%] w-full flex items-center justify-between">
                         <div className="flex items-center ">
                             <h6 className="font-jose font-semibold text-[#F1F1F1] text-[14px] lg:text-[16px]">English</h6>
                             <RiArrowDropDownLine className="text-[#F1F1F1] h-[20px] w-[20px]" />

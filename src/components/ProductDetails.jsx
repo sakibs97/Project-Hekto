@@ -37,11 +37,13 @@ const ProductDetails = () => {
             {/* Product View Part Start */}
             <Container>
                 <div className="flex justify-around items-center mb-10 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] p-[15px]">
-                    {singleProduct.images?.map((item) => (
-                        <div className=" items-center gap-x-4">
-                            <img src={item} alt={singleProduct.title} className="w-[90%]" />
-                        </div>
-                    ))}
+                    <div className="w-[48%] grid grid-cols-2 gap-3">
+                        {singleProduct.images?.map((item) => (
+                            <div className="">
+                                <img src={item} alt={singleProduct.title} className="w-[90%]" />
+                            </div>
+                        ))}
+                    </div>
 
                     <div className="w-[45%]">
                         <h4 className="font-jose font-semibold text-[36px] text-[#0D134E]">{singleProduct.title}</h4>

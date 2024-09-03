@@ -29,7 +29,7 @@ const LeatestBlog = () => {
                         </div>
                         <div className="pl-8 pb-8">
                             <h3 className="font-jose font-bold text-[18px] text-[#151875] group-hover:text-[#FB2E86] ease-in-out duration-500">Top esssential Trends in 2021</h3>
-                            <p className="font-lato font-normal text-[16px] text-[#72718F] w-[300px] py-[15px]">More off this less hello samlande lied much
+                            <p className="font-lato font-normal text-[16px] text-[#72718F] lg:w-[300px] py-[15px]">More off this less hello samlande lied much
                                 over tightly circa horse taped mightly</p>
                             <button className="font-lato font-bold text-[16px] text-[#151875] underline underline-offset-4 group-hover:text-[#FB2E86] ease-in-out duration-500">Read More</button>
                         </div>
@@ -50,7 +50,7 @@ const LeatestBlog = () => {
                         </div>
                         <div className="pl-8 pb-8">
                             <h3 className="font-jose font-bold text-[18px] text-[#151875] group-hover:text-[#FB2E86] ease-in-out duration-500">Top esssential Trends in 2021</h3>
-                            <p className="font-lato font-normal text-[16px] text-[#72718F] w-[300px] py-[15px]">More off this less hello samlande lied much
+                            <p className="font-lato font-normal text-[16px] text-[#72718F] lg:w-[300px] py-[15px]">More off this less hello samlande lied much
                                 over tightly circa horse taped mightly</p>
                             <button className="font-lato font-bold text-[16px] text-[#151875] underline underline-offset-4 group-hover:text-[#FB2E86] ease-in-out duration-500">Read More</button>
                         </div>
@@ -71,7 +71,7 @@ const LeatestBlog = () => {
                         </div>
                         <div className="pl-8 pb-8">
                             <h3 className="font-jose font-bold text-[18px] text-[#151875] group-hover:text-[#FB2E86] ease-in-out duration-500">Top esssential Trends in 2021</h3>
-                            <p className="font-lato font-normal text-[16px] text-[#72718F] w-[300px] py-[15px]">More off this less hello samlande lied much
+                            <p className="font-lato font-normal text-[16px] text-[#72718F] lg:w-[300px] py-[15px]">More off this less hello samlande lied much
                                 over tightly circa horse taped mightly</p>
                             <button className="font-lato font-bold text-[16px] text-[#151875] underline underline-offset-4 group-hover:text-[#FB2E86] ease-in-out duration-500">Read More</button>
                         </div>

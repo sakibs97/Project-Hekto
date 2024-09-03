@@ -5,6 +5,54 @@ import top3 from "../assets/top/top3.png"
 import top4 from "../assets/top/top4.png"
 import Viewreusable from "./reusable/Viewreusable"
 import Slider from "react-slick";
+import { IoIosArrowDroprightCircle, IoIosArrowDropleftCircle } from "react-icons/io";
+
+
+const CustomPrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+        <div
+            className="custom-arrow custom-prev"
+            onClick={onClick}
+            style={{
+                position: "absolute",
+                bottom: "50%",
+                left: "0px",
+                transform: "translateY(-50%)",
+                zIndex: 2,
+                color: "green",
+                fontSize: "24px",
+                cursor: "pointer"
+            }}
+        >
+            <IoIosArrowDropleftCircle />
+        </div>
+    );
+};
+
+const CustomNextArrow = (props) => {
+    const { onClick } = props;
+    return (
+        <div
+            className="custom-arrow custom-next"
+            onClick={onClick}
+            style={{
+                position: "absolute",
+                bottom: "50%",
+                right: "0px",
+                transform: "translateY(-50%)",
+                zIndex: 2,
+                color: "green",
+                fontSize: "24px",
+                cursor: "pointer"
+            }}
+        >
+            <IoIosArrowDroprightCircle />
+        </div>
+    );
+};
+
+
 
 const TopCategories = () => {
     const settings = {
@@ -14,6 +62,8 @@ const TopCategories = () => {
         initialSlide: 0,
         autoplay: true,
         autoplaySpeed: 2000,
+        nextArrow: <CustomNextArrow />,
+        prevArrow: <CustomPrevArrow />,
 
         responsive: [
             {

@@ -10,7 +10,7 @@ const Footer = () => {
                 <Container>
                     <div className="flex flex-wrap">
                         <div className="w-full lg:w-[30%] mb-10 lg:mb-0">
-                            <img src={logo} alt="" />
+                            <Link to="/"><img src={logo} alt="logo" /></Link>
                             <div className="w-full lg:w-[377px] my-7">
                                 <input
                                     type="email"

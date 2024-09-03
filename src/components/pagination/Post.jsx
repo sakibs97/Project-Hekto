@@ -54,7 +54,7 @@ const Post = ({ allpage, categoryFilter }) => {
                 <div className="flex flex-wrap lg:gap-x-16 items-center">
                     {allpage.map((item) => (
                         <>
-                            <div className="group my-[15px] w-[235px] ">
+                            <div className="group my-[15px] lg:w-[235px] ">
                                 <div className="relative p-[15px] bg-[#ccc9c9] group-hover:bg-[#EBF4F3] ease-in-out duration-500 h-[235px] ">
                                     <Link to={`/Product/${item.id}`}><img src={item.images} alt={item.title} className="h-[200px] w-[200px]" /></Link>
                                     <LatestProreusable />
@@ -67,8 +67,8 @@ const Post = ({ allpage, categoryFilter }) => {
                                         <GoDotFill className="text-[#8568FF]" />
                                     </div>
                                     <div className="flex items-center justify-center">
-                                        <p className="font-jose font-normal text-[14px] text-[#151875] pr-3">${item.price}.00</p>
-                                        <p className="font-jose font-normal text-[14px] text-[#FB2448] line-through">${item.price}.00</p>
+                                        <p className="font-jose font-normal text-[14px] text-[#151875] pr-3">${item.price}</p>
+                                        <p className="font-jose font-normal text-[14px] text-[#FB2448] line-through">${item.price}</p>
                                     </div>
                                 </div>
                             </div>

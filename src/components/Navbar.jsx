@@ -24,14 +24,14 @@ const Navbar = () => {
     // })
 
     return (
-        <section className="my-[15px] mx-[10px] lg:mx-0">
+        <section className="my-[15px] mx-[10px]">
             <Container>
                 <div className="flex justify-between items-center">
                     <div className="lg:w-[10%]">
                         <Link to="/"><img src={Hekto} alt="Hekto" /></Link>
                     </div>
                     <div className="flex justify-between items-center lg:w-[80%]" >
-                        <ul className={`lg:flex justify-between lg:w-[50%] text-center lg:static z-50 lg:bg-none absolute ${show == true ? 'bg-[rgb(22,22,22,10%)] w-full top-[140px]  left-0 ease-in-out duration-700' : 'left-[-400px] top-[140px] ease-in-out duration-700'}`}>
+                        <ul className={`lg:flex justify-between lg:w-[50%] text-center lg:static z-50 lg:bg-none absolute ${show == true ? 'bg-[rgba(231,231,231,0.88)] w-full top-[145px]  left-0 ease-in-out duration-700 py-2' : 'left-[-400px] top-[140px] ease-in-out duration-700'}`}>
                             <li className={`font-lato font-normal text-[16px] hover:text-[#FB2E86] ${activeTab === 'Home' ? 'text-[#FB2E86]' : 'text-[#0D0E43]'}`} id="Home-tab" onClick={() => setActiveTab('Home')}><Link to="/">Home</Link></li>
                             <li className={`font-lato font-normal text-[16px] hover:text-[#FB2E86] ${activeTab === 'shop' ? 'text-[#FB2E86]' : 'text-[#0D0E43]'}`} onClick={() => setActiveTab('shop')}><Link to="/shop">Shop</Link></li>
                             <li className={`font-lato font-normal text-[16px] hover:text-[#FB2E86] ${activeTab === 'blog' ? 'text-[#FB2E86]' : 'text-[#0D0E43]'}`} onClick={() => setActiveTab('blog')}><Link to="/blog">Blog</Link></li>
