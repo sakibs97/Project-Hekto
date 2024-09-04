@@ -172,22 +172,6 @@ const ShopGridDefault = () => {
                                 ))}
                             </ul>
                         </div> */}
-                    {/* <div className="my-8">
-                            <h4 className="font-jose font-bold lg:text-[20px] md:text-[18px] text-[15px] text-[#151875] underline decoration-[#000] decoration-2 underline-offset-[5px]">
-                                Price Filter
-                            </h4>
-                            <ul>
-                                {["$0.00 - $150.00", "$150.00 - $350.00", "$350.00 - $504.00", "$450.00 +"].map((priceRange) => (
-                                    <li key={priceRange} className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2">
-                                        <input
-                                            type="checkbox"
-                                            className="lg:mr-[10px] mr-[5px] border-[#FFDBF1] bg-[#FFDBF1] checked:bg-[#FF3EB2]"
-                                        />
-                                        {priceRange}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div> */}
                     <div className="my-3 text-center lg:hidden" onClick={handelCateShow}>
                         {cateShow ? (
                             <p className="font-jose font-bold text-[20px] text-[#FB2E86] cursor-pointer">Sort by Categories -</p>

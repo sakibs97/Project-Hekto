@@ -34,10 +34,9 @@ const ProductDetails = () => {
 
         < section >
             <Bannerreusable headline='Product Details' pname='Product Details' home='Home ' page='Pages' />
-            {/* Product View Part Start */}
             <Container>
-                <div className="flex justify-around items-center mb-10 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] p-[15px]">
-                    <div className="w-[48%] grid grid-cols-2 gap-3">
+                <div className="flex flex-wrap justify-around items-center mb-10 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] p-[15px]">
+                    <div className="lg:w-[48%] grid grid-cols-2 gap-3">
                         {singleProduct.images?.map((item) => (
                             <div className="">
                                 <img src={item} alt={singleProduct.title} className="w-[90%]" />
@@ -45,7 +44,7 @@ const ProductDetails = () => {
                         ))}
                     </div>
 
-                    <div className="w-[45%]">
+                    <div className="lg:w-[45%] ">
                         <h4 className="font-jose font-semibold text-[36px] text-[#0D134E]">{singleProduct.title}</h4>
                         <span className="flex items-center my-[15px]">
                             <FaStar className="mx-1 text-[#FFCC2E]" />
@@ -59,12 +58,12 @@ const ProductDetails = () => {
                             <p className="font-jose font-normal text-[14px] text-[#FB2448] line-through">${singleProduct.price}00</p>
                         </div>
                         <h5 className="font-jose font-semibold text-[16px] text-[#0D134E] my-[15px]">Color</h5>
-                        <p className="font-jose font-semibold text-[16px] text-[#A9ACC6] w-[540px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tellus porttitor purus, et volutpat sit.</p>
+                        <p className="font-jose font-semibold text-[16px] text-[#A9ACC6] lg:w-[540px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tellus porttitor purus, et volutpat sit.</p>
                         <div className="flex items-center mt-5 mb-4 justify-center">
-                            <Link to="/cart"><button onClick={() => handelAddtoCart(singleProduct)} className="font-jose font-normal text-[16px] text-[#151875] mr-5">Add To cart</button></Link>
+                            <Link to="/cart"><button onClick={() => handelAddtoCart(singleProduct)} className="font-jose font-normal text-[16px] text-[#151875] hover:text-[#FB2E86] duration-500 mr-5">Add To cart</button></Link>
                             <FaRegHeart />
                         </div>
-                        <h5 className="font-jose font-semibold text-[16px] text-[#0D134E]">Categories:</h5>
+                        <h5 className="font-jose font-semibold text-[16px] text-[#0D134E]">Categories : <span className="text-[#FB2E86]"></span></h5>
                         <h5 className="font-jose font-semibold text-[16px] text-[#0D134E] my-[10px]">Tags</h5>
                         <div className="flex items-center">
                             <h5 className="font-jose font-semibold text-[16px] text-[#0D134E] mr-3">Share:</h5>
@@ -90,7 +89,7 @@ const ProductDetails = () => {
                 <Container>
                     <div className="">
                         <div className="mb-4">
-                            <ul className="flex justify-between flex-wrap -mb-px font-medium text-center w-[50%]" id="default-tab" role="tablist">
+                            <ul className="flex lg:justify-between justify-around flex-wrap -mb-px font-medium text-center lg:w-[50%]" id="default-tab" role="tablist">
                                 <li className="me-2" role="presentation">
                                     <button className={`inline-block p-1 border-b-2 font-jose font-semibold text-[24px] text-[#151875] ${activeTab === 'description' ? 'border-[#151875]' : 'border-transparent'}`} id="description-tab" onClick={() => setActiveTab('description')} type="button" role="tab" aria-controls="description" aria-selected={activeTab === 'description'}>Description</button>
                                 </li>
@@ -105,14 +104,13 @@ const ProductDetails = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div id="default-tab-content">
+                        <div id="default-tab-content" className="mx-[10px]">
                             <div className={`${activeTab === 'description' ? 'block' : 'hidden'}`} id="description" role="tabpanel" aria-labelledby="description-tab">
                                 <div className="mt-10">
                                     <h5 className="font-jose font-semibold text-[22px] text-[#151875]">Varius tempor.</h5>
                                     <p className="font-jose font-semibold text-[16px] text-[#A9ACC6] mt-4 mb-7">
                                         {singleProduct.description}.
                                     </p>
-
                                 </div>
                             </div>
                             <div className={`${activeTab === 'additional' ? 'block' : 'hidden'}`} id="additional" role="tabpanel" aria-labelledby="additional-tab">

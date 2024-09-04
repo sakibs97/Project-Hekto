@@ -8,7 +8,7 @@ import LatestProreusable from "./reusable/LatestProreusable"
 const RelatedProduct = () => {
     return (
         <section>
-            <Container className='my-10'>
+            <Container className='my-10 px-[10px]'>
                 <div className="">
                     <h2 className="font-jose font-bold text-[36px] text-[#101750]">Related Products</h2>
                 </div>

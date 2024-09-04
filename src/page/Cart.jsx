@@ -24,28 +24,28 @@ const Cart = () => {
         <section>
             <Bannerreusable headline='Shopping Cart' pname='Shopping Cart' home='Home' page='Page' />
             <Container className='my-10 flex flex-col lg:flex-row justify-between'>
-                <div className="lg:w-[70%] w-full overflow-x-auto px-[10px] lg:px-0">
+                <div className="lg:w-[70%] w-full overflow-x-auto px-[10px]">
                     <table className="w-full">
                         <TableHead>
-                            <TableCell><h6 className="font-jose font-bold text-[16px] md:text-[20px] text-[#1D3178]">Product</h6></TableCell>
-                            <TableCell><h6 className="font-jose font-bold text-[16px] md:text-[20px] text-[#1D3178]">Price</h6></TableCell>
-                            <TableCell><h6 className="font-jose font-bold text-[16px] md:text-[20px] text-[#1D3178]">Quantity</h6></TableCell>
-                            <TableCell><h6 className="font-jose font-bold text-[16px] md:text-[20px] text-[#1D3178]">Total</h6></TableCell>
+                            <TableCell padding="none"><h6 className="p-[10px] font-jose font-bold text-[16px] md:text-[20px] text-[#1D3178]">Product</h6></TableCell>
+                            <TableCell padding="none"><h6 className="p-[10px] font-jose font-bold text-[16px] md:text-[20px] text-[#1D3178]">Price</h6></TableCell>
+                            <TableCell padding="none"><h6 className="p-[10px] font-jose font-bold text-[16px] md:text-[20px] text-[#1D3178]">Quantity</h6></TableCell>
+                            <TableCell padding="none"><h6 className="p-[10px] font-jose font-bold text-[16px] md:text-[20px] text-[#1D3178]">Total</h6></TableCell>
                         </TableHead>
                         {data.map((item, index) => (
                             <>
                                 <TableBody>
                                     <TableRow>
-                                        <TableCell>
-                                            <div className="flex items-center">
+                                        <TableCell padding="none" >
+                                            <div className="flex items-center p-2 ">
                                                 <div className="relative">
-                                                    <img src={item.images} alt="" className="w-12 h-12 md:w-16 md:h-16 lg:w-[100px] lg:h-[100px]" />
+                                                    <img src={item.images} alt="" className="w-[40px] h-[40px] lg:w-[100px] lg:h-[100px]" />
                                                     <div className="absolute top-[-6px] right-[-7px]" onClick={() => dispatch(removeProduct(index))}>
                                                         <GoXCircleFill className="hover:text-[#FB2E86]" />
                                                     </div>
                                                 </div>
                                                 <div className="pl-[10px] md:pl-[20px]">
-                                                    <h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#000000] w-[200px]">{item.title}</h6>
+                                                    <h6 className="font-jose font-normal text-[12px] md:text-[14px] text-left text-[#000000] lg:w-[200px] w-[100px]">{item.title}</h6>
                                                     <div className="flex items-center">
                                                         <p className="font-jose font-normal text-[10px] md:text-[12px] text-[#A1A8C1]">Color:</p>
                                                         <p className="font-jose font-normal text-[12px] md:text-[14px] text-[#A1A8C1]">Brown</p>
@@ -56,11 +56,21 @@ const Cart = () => {
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </TableCell>
-                                        <TableCell><h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#15245E]">${item.price}</h6></TableCell>
-                                        <TableCell><p className="border bg-[#F0EFF2] font-jose font-bold text-[10px] md:text-[12px] lg:text-[14px] text-[#FB2E86] w-[45px] md:w-[55px] lg:w-[70px] flex justify-between items-center"><span className="py-[5px] px-[4px] bg-[#df6198] text-[#fff] cursor-pointer" onClick={() => dispatch(productDecrement(index))}><FaMinus /></span>{item.qun}<span className="py-[5px] px-[4px] bg-[#df6198] text-[#fff] cursor-pointer" onClick={() => dispatch(productIncrement(index))}><FaPlus /></span></p></TableCell>
-                                        <TableCell className="w-[150px]"><h6 className="font-jose font-normal text-[12px] md:text-[14px] text-[#15245E]">${item.price * item.qun}</h6></TableCell>
+                                        <TableCell padding="none" text-align="center">
+                                            <h6 className="p-2 font-jose font-normal text-[12px] md:text-[14px] text-[#15245E]">${item.price}</h6>
+                                        </TableCell>
+                                        <TableCell padding="none" text-align="center">
+                                            <p className="m-2 border bg-[#F0EFF2] text-center font-jose font-bold text-[10px] md:text-[12px] lg:text-[14px] text-[#FB2E86] w-[50px] md:w-[55px] lg:w-[70px] flex justify-between items-center ">
+                                                <span className="py-[5px] px-[4px] bg-[#df6198] text-[#fff] cursor-pointer" onClick={() => dispatch(productDecrement(index))}><FaMinus />
+                                                </span>{item.qun}
+                                                <span className="py-[5px] px-[4px] bg-[#df6198] text-[#fff] cursor-pointer" onClick={() => dispatch(productIncrement(index))}><FaPlus />
+                                                </span>
+                                            </p>
+                                        </TableCell>
+                                        <TableCell className="lg:w-[150px]" padding="none">
+                                            <h6 className="p-2 font-jose font-normal text-[12px] md:text-[14px] text-[#15245E]">${item.price * item.qun}</h6>
+                                        </TableCell>
                                     </TableRow>
                                 </TableBody>
                             </>
