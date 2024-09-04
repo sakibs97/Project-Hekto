@@ -3,7 +3,7 @@ import Container from "../Container"
 
 const Bannerreusable = ({ headline, pname, home, page }) => {
     return (
-        <section className="bg-[#F6F5FF] lg:py-[100px] py-[50px] my-10 px-[10px] lg:px-0">
+        <section className="bg-[#F6F5FF] lg:py-[100px] py-[50px] my-10 px-[10px]">
             <Container>
                 <div className="">
                     <h2 className="font-jose font-bold text-[30px] lg:text-[36px] text-[#101750]">{headline}</h2>

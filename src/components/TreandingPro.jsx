@@ -36,9 +36,9 @@ const TreandingPro = ({ name, price, pricex }) => {
                                     <p className="font-lato font-medium text-[14px] text-[#8A91AB] pl-3">Arms, back and seats are structurally reinforced</p>
                                 </div>
                             </div>
-                            <div className="flex items-center">
+                            <div className="flex flex-wrap items-center">
                                 <button className="font-jose font-normal text-[17px] text-[#fff] px-[48px] py-[20px] bg-[#FB2E86]">Add to Cart</button>
-                                <div className="pl-5">
+                                <div className="pl-5 pt-5 lg:pt-0">
                                     <h5 className="font-jose font-normal text-[16px] text-[#151875]">B & B Italian Sofa</h5>
                                     <h6 className="font-jose font-normal text-[14px] text-[#151875]">$32.00</h6>
                                 </div>
