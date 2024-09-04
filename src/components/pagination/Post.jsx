@@ -21,7 +21,7 @@ const Post = ({ allpage, categoryFilter }) => {
 
 
     return (
-        <div className="w-[75%]">
+        <div className="w-full">
             {categoryFilter.length > 0 ?
                 <div className="">
                     <div className="flex flex-wrap lg:gap-x-16 items-center">
@@ -51,12 +51,12 @@ const Post = ({ allpage, categoryFilter }) => {
                     <h6 onClick={handelShow} className="font-jose font-normal underline text-[14px] text-[#151875] cursor-pointer">Show All</h6>
                 </div>
                 :
-                <div className="flex flex-wrap lg:gap-x-16 items-center">
+                <div className="flex flex-wrap lg:gap-x-4 gap-x-2 mx-[10px]">
                     {allpage.map((item) => (
                         <>
-                            <div className="group my-[15px] lg:w-[235px] ">
+                            <div className="group my-[15px] lg:w-[235px] md:w-[24%] sm:w-[32%] w-[48%]">
                                 <div className="relative p-[15px] bg-[#ccc9c9] group-hover:bg-[#EBF4F3] ease-in-out duration-500 h-[235px] ">
-                                    <Link to={`/Product/${item.id}`}><img src={item.images} alt={item.title} className="h-[200px] w-[200px]" /></Link>
+                                    <Link to={`/Product/${item.id}`}><img src={item.images} alt={item.title} className="h-[200px] lg:w-[200px] w-[20%]" /></Link>
                                     <LatestProreusable />
                                 </div>
                                 <div className="text-center mt-[18px]">
@@ -66,7 +66,7 @@ const Post = ({ allpage, categoryFilter }) => {
                                         <GoDotFill className="text-[#EC42A2]" />
                                         <GoDotFill className="text-[#8568FF]" />
                                     </div>
-                                    <div className="flex items-center justify-center">
+                                    <div className="flex flex-wrap items-center justify-center">
                                         <p className="font-jose font-normal text-[14px] text-[#151875] pr-3">${item.price}</p>
                                         <p className="font-jose font-normal text-[14px] text-[#FB2448] line-through">${item.price}</p>
                                     </div>
