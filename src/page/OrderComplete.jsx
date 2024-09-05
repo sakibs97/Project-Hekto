@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom"
 import Container from "../components/Container"
-import Bannerreusable from "../components/reusable/Bannerreusable"
 import Sponser from "../components/Sponser"
 
 
 const OrderComplete = ({ headline, pname, home, page }) => {
     return (
         <section>
-            <Bannerreusable headline='Shopping Curt' pname='Shopping Curt' home='Home' page='Page' />
             <Container className="my-10">
-                <div className="text-center relative border-l-[2px] border-b-[2px] border-dashed">
+                <div className="text-center relative border-l-[2px] border-b-[2px] border-dashed mr-10 ml-14">
                     <div className="relative block">
                         <svg width="89" height="82" className="mx-auto" viewBox="0 0 89 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M26.541 76.8472C18.541 72.8472 8.20765 53.1806 4.04098 43.8472C-1.42121 32.8473 2.04098 28.3472 2.54098 24.8472C2.94098 22.0472 7.70765 17.0138 10.041 14.8472C12.7076 11.8472 21.541 5.04725 35.541 1.84725C53.041 -2.15275 71.541 8.84725 81.041 17.3472C88.641 24.1472 88.541 33.8472 87.541 37.8472C85.7076 43.0139 79.641 56.6472 70.041 69.8472C58.041 86.3472 36.541 81.8472 26.541 76.8472Z" fill="#F6F7FA" stroke="#F6F7FA" />
@@ -21,7 +19,7 @@ const OrderComplete = ({ headline, pname, home, page }) => {
                         </div>
                     </div>
                     <h3 className="font-jose font-bold text-[36px] text-[#101750] ">Your Order Is Completed! </h3>
-                    <div className="w-[625px] mx-auto my-[28px]">
+                    <div className="lg:w-[625px] md:w-[400px] mx-auto my-[28px]">
                         <p className="font-lato font-semibold text-[16px] text-[#8D92A7] ">Thank you for your order! Your order is being processed and will be completed within 3-6
                             hours. You will receive an email confirmation when your order is completed.
                         </p>
