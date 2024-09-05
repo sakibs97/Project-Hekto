@@ -15,6 +15,7 @@ import ShippingAddy from "./page/ShippingAddy"
 import Login from "./page/Login"
 import Shop from "./page/Shop"
 import MyAccount from "./page/MyAccount"
+import UserDetails from "./page/UserDetails"
 
 let router = createBrowserRouter(createRoutesFromElements(
   <>
@@ -31,6 +32,7 @@ let router = createBrowserRouter(createRoutesFromElements(
       <Route path="/cart" element={<Cart />}></Route>
       <Route path="/Order-Complete" element={<OrderComplete />}></Route>
       <Route path="/shipping" element={<ShippingAddy />}></Route>
+      <Route path="/userDetails" element={<UserDetails />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/account" element={<MyAccount />}></Route>
     </Route>
