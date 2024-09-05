@@ -1,7 +1,7 @@
 import Container from "../components/Container"
 import Bannerreusable from "../components/reusable/Bannerreusable"
 import { TableBody, TableCell, TableHead, TableRow } from "@mui/material"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { GoXCircleFill } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,6 +11,7 @@ import { productIncrement, productDecrement, removeProduct } from "../components
 const Cart = () => {
     let dispatch = useDispatch()
     let data = useSelector((state) => state.product.cartItem)
+    let navigate = useNavigate()
 
 
     const { totalPrice, totalQuantity } = data.reduce((acc, item) => {
@@ -18,6 +19,15 @@ const Cart = () => {
         acc.totalQuantity += item.qun
         return acc
     }, { totalPrice: 0, totalQuantity: 0 })
+
+    let handelCalculate = () => {
+        if (totalQuantity > 0) {
+            navigate("/shipping");
+        } else {
+            alert("Product quantity must be at least one to calculate shipping.");
+        }
+    };
+
 
 
     return (
@@ -82,7 +92,7 @@ const Cart = () => {
                     </div>
                 </div>
                 <div className="lg:w-[25%] w-full mt-10 lg:mt-0">
-                    <h4 className="font-jose font-bold text-[18px] md:text-[20px] text-[#1D3178] mt-[16px] mb-10 text-center">Cart Totals</h4>
+                    <h4 className="font-jose font-bold text-[18px] md:text-[20px] text-[#1D3178] mt-[10px] mb-[38px] pb-[3px] text-center border-b-[1px] border-[rgb(40,40,40,20%)]">Cart Totals</h4>
                     <div className="p-[20px] md:p-[30px] bg-[#F4F4FC] rounded-md drop-shadow-md mx-[10px] lg:mx-0">
                         <div className="border-b-[3px] border-[#E8E6F1] flex justify-between items-center my-7">
                             <h6 className="font-lato font-semibold text-[16px] md:text-[18px] text-[#1D3178]">Subtotals:</h6>
@@ -96,21 +106,15 @@ const Cart = () => {
                             <h6 className="font-lato font-semibold text-[16px] md:text-[18px] text-[#1D3178]">Totals:</h6>
                             <p className="font-lato font-normal text-[14px] md:text-[16px] text-[#15245E]">${totalPrice}</p>
                         </div>
+                        <button
+                            onClick={handelCalculate}
+                            className={`font-jose font-semibold text-[14px] md:text-[16px] text-[#fff] py-[10px] md:py-[12px] px-[20px] md:px-[24px] border border-[#FB2E86] bg-[#FB2E86] rounded-md mt-10 ${totalQuantity === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            disabled={totalQuantity === 0}
+                        >
+                            Calculate Shipping
+                        </button>
+                    </div>
 
-                    </div>
-                    <h4 className="font-jose font-bold text-[18px] md:text-[20px] text-[#1D3178] mt-[16px] py-7 text-center">Calculate Shipping</h4>
-                    <div className="p-[20px] md:p-[30px] bg-[#F4F4FC] rounded-md drop-shadow-md mx-[10px] lg:mx-0">
-                        <div className="border-b-[2px] border-[#C7CEE4]">
-                            <input type="text" placeholder="Bangladesh" className="font-jose font-semibold text-[14px] md:text-[15px] text-[#000] placeholder:font-jose placeholder:font-semibold placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-[#C5CBE3] border-none w-full bg-[#F4F4FC]" />
-                        </div>
-                        <div className="border-b-[2px] border-[#C7CEE4] my-[20px] md:my-[30px]">
-                            <input type="text" placeholder="Mirpur Dhaka - 1200" className="font-jose font-semibold text-[14px] md:text-[15px] text-[#000] placeholder:font-jose placeholder:font-semibold placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-[#C5CBE3] border-none w-full bg-[#F4F4FC]" />
-                        </div>
-                        <div className="border-b-[2px] border-[#C7CEE4]">
-                            <input type="text" placeholder="Postal Code" className="font-jose font-semibold text-[14px] md:text-[15px] text-[#000] placeholder:font-jose placeholder:font-semibold placeholder:text-[12px] md:placeholder:text-[14px] placeholder:text-[#C5CBE3] border-none w-full bg-[#F4F4FC]" />
-                        </div>
-                        <Link to="/shipping"><button className="font-jose font-semibold text-[14px] md:text-[16px] text-[#fff] py-[10px] md:py-[12px] px-[20px] md:px-[24px] border border-[#FB2E86] bg-[#FB2E86] rounded-md mt-10">Calculate Shipping</button></Link>
-                    </div>
                 </div>
             </Container>
         </section>

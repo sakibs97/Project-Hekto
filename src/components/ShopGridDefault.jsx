@@ -2,6 +2,7 @@ import Container from "./Container";
 import Bannerreusable from "./reusable/Bannerreusable";
 import PageSortBy from "./PageSortBy";
 import { FaStar } from "react-icons/fa";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { useContext, useEffect, useState } from "react";
 import { ApiData } from "./ContextApi";
 import Post from "./pagination/Post";
@@ -174,9 +175,15 @@ const ShopGridDefault = () => {
                         </div> */}
                     <div className="my-3 text-center lg:hidden" onClick={handelCateShow}>
                         {cateShow ? (
-                            <p className="font-jose font-bold text-[20px] text-[#FB2E86] cursor-pointer">Sort by Categories -</p>
+                            <div className="flex items-center justify-center group">
+                                <p className="font-jose font-bold text-[20px] text-[#FB2E86] group-hover:text-[#151875] duration-300 cursor-pointer">Categories</p>
+                                <MdKeyboardArrowUp className="group-hover:text-[#151875] text-[#FB2E86] duration-700 h-7 w-7" />
+                            </div>
                         ) : (
-                            <p className="font-jose font-bold text-[20px] text-[#151875] hover:text-[#FB2E86] cursor-pointer">Sort by Categories +</p>
+                            <div className="flex items-center justify-center group">
+                                <p className="font-jose font-bold text-[20px] text-[#151875] group-hover:text-[#FB2E86] duration-300 cursor-pointer">Categories</p>
+                                <MdKeyboardArrowDown className="group-hover:text-[#FB2E86] duration-700 h-7 w-7" />
+                            </div>
                         )}
                     </div>
                     <div className="w-full">
