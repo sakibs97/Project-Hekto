@@ -179,7 +179,7 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
                                         value={firstName}
                                     />
                                     <label
-                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 p-[3px]"
+                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 px-[2px]"
                                     >
                                         First Name
                                     </label>
@@ -196,7 +196,7 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
 
                                     />
                                     <label
-                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 p-[3px]"
+                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 px-[2px]"
                                     >
                                         Last Name
                                     </label>
@@ -213,7 +213,7 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
                                 value={address}
                             />
                             <label
-                                className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 p-[3px]"
+                                className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 px-[2px]"
                             >
                                 Address
                             </label>
@@ -229,7 +229,7 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
                                     value={city}
                                 />
                                 <label
-                                    className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 p-[3px]"
+                                    className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 px-[2px]"
                                 >
                                     City
                                 </label>
@@ -244,7 +244,7 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
                                     value={postalCode}
                                 />
                                 <label
-                                    className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 p-[3px]"
+                                    className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 px-[2px]"
                                 >
                                     Postal Code
                                 </label>
@@ -270,7 +270,7 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
                                         </select>
                                     </form>
                                     <label
-                                        className="absolute left-[20px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:block peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] px-1 rounded-b-md opacity-100 p-[3px]">
+                                        className="absolute left-[20px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:block peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] px-1 rounded-b-md opacity-100 px-[2px]">
                                         Division
                                     </label>
                                 </div>
@@ -294,7 +294,7 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
                                         </select>
                                     </form>
                                     <label
-                                        className="absolute left-[20px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:block peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] px-1 rounded-b-md opacity-100 p-[3px]">
+                                        className="absolute left-[20px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:block peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] px-1 rounded-b-md opacity-100 px-[2px]">
                                         District
                                     </label>
                                 </div>
@@ -312,7 +312,7 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
                                         value={email}
                                     />
                                     <label
-                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 p-[3px]"
+                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 px-[2px]"
                                     >
                                         Email
                                     </label>
@@ -329,7 +329,7 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
                                         value={phoneNumber}
                                     />
                                     <label
-                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 p-[3px]"
+                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 px-[2px]"
                                     >
                                         Phone Number
                                     </label>
@@ -348,7 +348,7 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
                                         value={password}
                                     />
                                     <label
-                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 p-[3px]"
+                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 px-[2px]"
                                     >
                                         Password
                                     </label>
@@ -365,7 +365,7 @@ const ShippingAddy = ({ headline, pname, home, page }) => {
                                         value={confirmPassword}
                                     />
                                     <label
-                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 p-[3px]"
+                                        className="absolute left-[15px] top-[-2px] font-lato font-medium text-[14px] text-[#000] transition-all duration-300 transform origin-[0] peer-placeholder-shown:top-[50%] peer-placeholder-shown:translate-y-[-50%] peer-placeholder-shown:left-[10px] peer-placeholder-shown:scale-100 peer-placeholder-shown:px-0 peer-placeholder-shown:opacity-0 pointer-events-none bg-[#F8F8FD] rounded-b-md opacity-100 px-[2px]"
                                     >
                                         Password
                                     </label>
