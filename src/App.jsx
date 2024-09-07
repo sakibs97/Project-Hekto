@@ -1,7 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
 import RootLayout from "./components/layout/RootLayout"
 import Home from "./page/Home"
-import SPList from "./page/SPList"
 import ProDetails from "./page/ProDetails"
 import Blog from "./page/Blog"
 import SingleBlog from "./components/SingleBlog"
@@ -22,7 +21,6 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route element={<RootLayout />}>
       <Route index element={<Home />}></Route>
       <Route path="/shop" element={<Shop />}></Route>
-      <Route path="/shop-list" element={<SPList />}></Route>
       <Route path="/Product/:id" element={<ProDetails />}></Route>
       <Route path="/blog" element={<Blog />}></Route>
       <Route path="/single-blog" element={<SingleBlog />}></Route>
