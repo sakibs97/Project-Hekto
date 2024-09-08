@@ -17,11 +17,25 @@ const ShopGridDefault = () => {
     let [category, setCategory] = useState([]);
     let [categoryFilter, setCategoryFilter] = useState([]);
     let [multi, setMulti] = useState("")
+    let [priceShow, setPriceShow] = useState(false)
+    let [priceLow, setPriceLow] = useState()
+    let [priceHigh, setPriceHigh] = useState()
+    let [priceDisplay, setPriceDisplay] = useState()
+
 
     let lastPage = pageStart * perPage;
     let firstPage = lastPage - perPage;
 
-    let allpage = data.slice(firstPage, lastPage);
+    let allpage;
+    if (priceDisplay && priceDisplay.length > 0) {
+        allpage = priceDisplay.slice(firstPage, lastPage);
+    } else if (categoryFilter.length > 0) {
+        allpage = categoryFilter.slice(firstPage, lastPage);
+    } else {
+        allpage = data.slice(firstPage, lastPage);
+    }
+
+
 
     let pageNumber = [];
 
@@ -62,6 +76,15 @@ const ShopGridDefault = () => {
         setMulti("activeMulti")
     }
 
+    let handleShowPage = (e) => {
+        setPerPage(e.target.value)
+    }
+    let handleOneToTen = (value) => {
+        let priceFilter = data.filter((item) => item.price > value.low && item.price < value.high)
+        setPriceDisplay(priceFilter);
+
+    }
+
     return (
         <section>
             <Bannerreusable headline="Shop Grid Default" pname="Shop Grid Default" home="Home" page="Pages" />
@@ -73,8 +96,14 @@ const ShopGridDefault = () => {
                     </div>
                     <div className="lg:w-[45%] md:w-[50%] w-full flex lg:justify-around justify-between items-center">
                         <div className="flex items-center">
-                            <p className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#3F509E] lg:pr-2 pr-[5px]">Per Page:</p>
-                            <div className="border-[1px] border-[#E7E6EF] h-[25px] lg:w-[50px] w-[40px]"></div>
+                            <label htmlFor="" className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#3F509E] lg:pr-2 pr-[5px]">Per Page:</label>
+                            <select name="" onChange={handleShowPage} className="border-[1px] border-[#E7E6EF] font-lato font-normal text-[#8A8FB9] text-[12px] py-1">
+                                <option value="6">6</option>
+                                <option value="10">10</option>
+                                <option selected value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="40">40</option>
+                            </select>
                         </div>
                         <div className="flex items-center">
                             <p className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#3F509E]">Sort By:</p>
@@ -178,6 +207,18 @@ const ShopGridDefault = () => {
                             </div>
                             <div className="my-8">
                                 <h4 className="font-jose font-bold lg:text-[20px] md:text-[18px] text-[15px] text-[#151875] underline decoration-[#000] decoration-2 underline-offset-[5px]">Price Filter</h4>
+
+                                <div className="">
+                                    <h2 onClick={() => setPriceShow(!priceShow)} className='text-[18px] text-[#292929] font-dm font-bold '>Show Price</h2>
+                                    {priceShow &&
+                                        <ul>
+                                            <li onClick={() => handleOneToTen({ low: 0, high: 36 })}>$0-$9.99</li>
+
+                                            <li onClick={() => handleOneToTen({ low: 40, high: 810 })}>$10-$19.99</li>
+
+                                        </ul>
+                                    }
+                                </div>
                                 <ul>
                                     <li className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2"><input type="checkbox" name="" id="" className="lg:mr-[10px] mr-[5px] border-[#FFDBF1] bg-[#FFDBF1] checked:bg-[#FF3EB2]" />$0.00 - $150.00</li>
                                     <li className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2"><input type="checkbox" name="" id="" className="lg:mr-[10px] mr-[5px] border-[#FFDBF1] bg-[#FFDBF1] checked:bg-[#FF3EB2]" />$150.00 - $350.00</li>
