@@ -12,7 +12,7 @@ const LeatestBlog = () => {
                 <div className="text-center my-5 lg:my-10">
                     <h2 className="font-jose font-bold text-[30px] lg:text-[40px] text-[#1A0B5B]">Leatest Blog</h2>
                 </div>
-                <div className="flex flex-wrap justify-between items-center mb-10 mx-[10px] lg:mx-0">
+                <div className="flex flex-wrap justify-between items-center mb-10 mx-[10px]">
                     <div className="lg:w-[30%] w-full group drop-shadow-lg rounded-lg bg-[#FFFFFF] my-3">
                         <img src={blog} className="w-full" alt="" />
                         <div className="flex items-center py-5 pl-8">
@@ -29,7 +29,7 @@ const LeatestBlog = () => {
                         </div>
                         <div className="pl-8 pb-8">
                             <h3 className="font-jose font-bold text-[18px] text-[#151875] group-hover:text-[#FB2E86] ease-in-out duration-500">Top esssential Trends in 2021</h3>
-                            <p className="font-lato font-normal text-[16px] text-[#72718F] lg:w-[300px] py-[15px]">More off this less hello samlande lied much
+                            <p className="font-lato font-normal text-[16px] text-[#72718F] pr-3 py-[15px]">More off this less hello samlande lied much
                                 over tightly circa horse taped mightly</p>
                             <button className="font-lato font-bold text-[16px] text-[#151875] underline underline-offset-4 group-hover:text-[#FB2E86] ease-in-out duration-500">Read More</button>
                         </div>
@@ -50,7 +50,7 @@ const LeatestBlog = () => {
                         </div>
                         <div className="pl-8 pb-8">
                             <h3 className="font-jose font-bold text-[18px] text-[#151875] group-hover:text-[#FB2E86] ease-in-out duration-500">Top esssential Trends in 2021</h3>
-                            <p className="font-lato font-normal text-[16px] text-[#72718F] lg:w-[300px] py-[15px]">More off this less hello samlande lied much
+                            <p className="font-lato font-normal text-[16px] text-[#72718F] pr-3 py-[15px]">More off this less hello samlande lied much
                                 over tightly circa horse taped mightly</p>
                             <button className="font-lato font-bold text-[16px] text-[#151875] underline underline-offset-4 group-hover:text-[#FB2E86] ease-in-out duration-500">Read More</button>
                         </div>
@@ -71,7 +71,7 @@ const LeatestBlog = () => {
                         </div>
                         <div className="pl-8 pb-8">
                             <h3 className="font-jose font-bold text-[18px] text-[#151875] group-hover:text-[#FB2E86] ease-in-out duration-500">Top esssential Trends in 2021</h3>
-                            <p className="font-lato font-normal text-[16px] text-[#72718F] lg:w-[300px] py-[15px]">More off this less hello samlande lied much
+                            <p className="font-lato font-normal text-[16px] text-[#72718F] pr-3 py-[15px]">More off this less hello samlande lied much
                                 over tightly circa horse taped mightly</p>
                             <button className="font-lato font-bold text-[16px] text-[#151875] underline underline-offset-4 group-hover:text-[#FB2E86] ease-in-out duration-500">Read More</button>
                         </div>

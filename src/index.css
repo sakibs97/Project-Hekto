@@ -13,3 +13,7 @@ select:not([size]) {
     padding-right: 30px;    
   }
 
+  .main-content {
+    padding-top: 0px;
+  }
+  

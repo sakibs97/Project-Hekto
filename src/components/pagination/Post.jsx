@@ -69,22 +69,22 @@ const Post = ({ allpage, categoryFilter, multi }) => {
                     <div className="">
                         {allpage.map((item) => (
                             <>
-                                <div className="flex justify-between my-5">
+                                <div className="flex justify-between my-5 mx-2">
                                     <div className="relative lg:p-[15px] bg-[#ccc9c9] group-hover:bg-[#EBF4F3] ease-in-out duration-500 lg:h-[235px]">
                                         <Link to={`/Product/${item.id}`}>
-                                            <img src={item.images} alt={item.title} className="h-[200px] lg:w-[200px]" />
+                                            <img src={item.images} alt={item.title} className="lg:h-[200px] lg:w-[200px] md:h-[180px] md:w-[180px] sm:h-[150px] sm:w-[150px] h-[100px] w-[100px]" />
                                         </Link>
                                         <LatestProreusable />
                                     </div>
                                     <div className="w-[70%]">
                                         <div className="">
-                                            <div className="flex items-center">
+                                            <div className="flex flex-wrap items-center">
                                                 <h3 className="font-jose font-bold text-[20px] text-[#111C85]">{item.title}</h3>
                                                 <GoDotFill className="text-[#DE9034]" />
                                                 <GoDotFill className="text-[#EC42A2]" />
                                                 <GoDotFill className="text-[#8568FF]" />
                                             </div>
-                                            <div className="flex items-center py-3">
+                                            <div className="flex flex-wrap items-center py-3">
                                                 <p className="font-jose font-normal text-[14px] text-[#111C85]">${item.price}</p>
                                                 <p className="font-jose font-normal text-[14px] text-[#FB2448] line-through px-3">${item.price}</p>
                                                 <div className="flex items-center">

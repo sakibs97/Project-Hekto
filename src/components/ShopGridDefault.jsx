@@ -17,9 +17,6 @@ const ShopGridDefault = () => {
     let [category, setCategory] = useState([]);
     let [categoryFilter, setCategoryFilter] = useState([]);
     let [multi, setMulti] = useState("")
-    let [priceShow, setPriceShow] = useState(false)
-    let [priceLow, setPriceLow] = useState()
-    let [priceHigh, setPriceHigh] = useState()
     let [priceDisplay, setPriceDisplay] = useState()
 
 
@@ -79,11 +76,11 @@ const ShopGridDefault = () => {
     let handleShowPage = (e) => {
         setPerPage(e.target.value)
     }
-    let handleOneToTen = (value) => {
-        let priceFilter = data.filter((item) => item.price > value.low && item.price < value.high)
+    let handleOneToTen = (low, high) => {
+        let priceFilter = data.filter(item => item.price >= low && item.price <= high);
         setPriceDisplay(priceFilter);
+    };
 
-    }
 
     return (
         <section>
@@ -207,48 +204,36 @@ const ShopGridDefault = () => {
                             </div>
                             <div className="my-8">
                                 <h4 className="font-jose font-bold lg:text-[20px] md:text-[18px] text-[15px] text-[#151875] underline decoration-[#000] decoration-2 underline-offset-[5px]">Price Filter</h4>
-
-                                <div className="">
-                                    <h2 onClick={() => setPriceShow(!priceShow)} className='text-[18px] text-[#292929] font-dm font-bold '>Show Price</h2>
-                                    {priceShow &&
-                                        <ul>
-                                            <li onClick={() => handleOneToTen({ low: 0, high: 36 })}>$0-$9.99</li>
-
-                                            <li onClick={() => handleOneToTen({ low: 40, high: 810 })}>$10-$19.99</li>
-
-                                        </ul>
-                                    }
-                                </div>
                                 <ul>
-                                    <li className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2"><input type="checkbox" name="" id="" className="lg:mr-[10px] mr-[5px] border-[#FFDBF1] bg-[#FFDBF1] checked:bg-[#FF3EB2]" />$0.00 - $150.00</li>
-                                    <li className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2"><input type="checkbox" name="" id="" className="lg:mr-[10px] mr-[5px] border-[#FFDBF1] bg-[#FFDBF1] checked:bg-[#FF3EB2]" />$150.00 - $350.00</li>
-                                    <li className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2"><input type="checkbox" name="" id="" className="lg:mr-[10px] mr-[5px] border-[#FFDBF1] bg-[#FFDBF1] checked:bg-[#FF3EB2]" />$150.00 - $504.00</li>
-                                    <li className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2"><input type="checkbox" name="" id="" className="lg:mr-[10px] mr-[5px] border-[#FFDBF1] bg-[#FFDBF1] checked:bg-[#FF3EB2]" />$450.00 +</li>
+                                    <li className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2"
+                                        onClick={() => handleOneToTen(0, 10)}
+                                    >
+                                        <input type="checkbox" className="lg:mr-[10px] mr-[5px] border-[#FFDBF1] bg-[#FFDBF1] checked:bg-[#FF3EB2]" />
+                                        $0.00 - $10.00
+                                    </li>
+                                    <li className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2"
+                                        onClick={() => handleOneToTen(150, 350)}
+                                    >
+                                        <input type="checkbox" className="lg:mr-[10px] mr-[5px] border-[#FFDBF1] bg-[#FFDBF1] checked:bg-[#FF3EB2]" />
+                                        $150.00 - $350.00
+                                    </li>
+                                    <li className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2"
+                                        onClick={() => handleOneToTen(350, 500)}
+                                    >
+                                        <input type="checkbox" className="lg:mr-[10px] mr-[5px] border-[#FFDBF1] bg-[#FFDBF1] checked:bg-[#FF3EB2]" />
+                                        $350.00 - $500.00
+                                    </li>
+                                    <li className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2"
+                                        onClick={() => handleOneToTen(500, Infinity)}
+                                    >
+                                        <input type="checkbox" className="lg:mr-[10px] mr-[5px] border-[#FFDBF1] bg-[#FFDBF1] checked:bg-[#FF3EB2]" />
+                                        $500.00 +
+                                    </li>
                                 </ul>
+
                             </div>
                         </div>
                     </div>
-
-                    {/* <div>
-                            <h4 className="font-jose font-bold lg:text-[20px] md:text-[18px] text-[15px] text-[#151875] underline decoration-[#000] decoration-2 underline-offset-[5px]">
-                                Rating Item
-                            </h4>
-                            <ul>
-                                {[5, 4, 3].map((stars) => (
-                                    <li key={stars} className="font-lato font-normal lg:text-[16px] md:text-[14px] text-[12px] text-[#7E81A2] my-2 flex">
-                                        <input
-                                            type="checkbox"
-                                            className="lg:mr-[10px] mr-[5px] border-[#FFF6DA] bg-[#FFF6DA] checked:bg-[#FFCC2E]"
-                                        />
-                                        <span className="flex items-center">
-                                            {[...Array(stars)].map((_, i) => (
-                                                <FaStar key={i} className="lg:mx-1 mx-[2px] text-[#FFCC2E]" />
-                                            ))}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div> */}
                     <div className="my-3 text-center lg:hidden" onClick={handelCateShow}>
                         {cateShow ? (
                             <div className="flex items-center justify-center group">
